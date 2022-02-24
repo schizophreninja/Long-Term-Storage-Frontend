@@ -11,6 +11,7 @@
   <div class="container">
     <header class="page-header">
       <ul class="header__left">
+        <li class="expander__container --header-block"></li>
         <li class="header__logo --header-block">
           <span class="header__logo-text">Long-Term Storage</span>
         </li>
@@ -21,7 +22,7 @@
       </ul>
       <ul class="header__right">
         <li class="header__notifications --header-block">
-          <div class="header__notifications-icon"><p class="header__notifications-count">5</p></div>
+          <div class="header__notifications-icon"><p class="header__notifications-count">2</p></div>
         </li>
         <li class="header__profile --header-block">
           <img src="images/user.svg" alt="profile-avatar" class="header__profile-avatar">
@@ -30,18 +31,53 @@
       </ul>
     </header>
     <div class="page-wrapper">
+      <!-- TODO: REFACTOR -->
+      <input type="checkbox" class="expander__checkbox" id="showGroups">
+      <label for="showGroups" class="expander__button">
+        <div class="expander__top-line"></div>
+        <div class="expander__middle-line"></div>
+        <div class="expander__bottom-line"></div>
+      </label>
+      <!--                -->
       <div class="groups">
-        <div class="groups__item --selected-group">
-          <img src="images/group.svg" alt="" class="groups__item-icon">
-          <span class="groups__item-name">ИС-21</span>
-        </div>
         <div class="groups__item">
-          <img src="images/group.svg" alt="" class="groups__item-icon">
-          <span class="groups__item-name">ИС-11</span>
+          <img src="images/plus.svg" alt="" class="groups__add">
+          <span class="groups__item-name">Добавить группу</span>
         </div>
       </div>
       <div class="content">
-
+        <div class="about">
+          <div class="about__body">
+            <div class="about__wrapper-left">
+              <p class="about__welcome">
+                Добро пожаловать!
+              </p>
+              <p class="about__subscription">
+                Чтобы продолжить, выберите группу <br/>из меню в левом верхнем углу.
+              </p>
+              <p class="about__recent">
+                Ваши последние работы:
+                <ul class="--default-list">
+                  <li class="--task-unchecked">Техническое задание</li>
+                  <li class="--task-unchecked">Пояснительная записка</li>
+                  <li class="--task-accepted">Лист Задания</li>
+                  <li class="--task-cancelled">Титульный лист</li>
+                </ul>
+              </p>
+            </div>
+            <div class="links">
+              <div class="links__body">
+                <span class="links_desc">Внутренние ресурсы:</span>
+                <ul class="links__list --default-list">
+                  <li><a href="http://wap.anosov.ru/">Расписание занятий</a></li>
+                  <li><a href="http://anosov.ru/sotrudnikam/elektronnye-resursy">Дистанционное обучение</a></li>
+                  <li><a href="http://88.205.135.82:7074/">Сервер HFS</a></li>
+                  <li>...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
