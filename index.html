@@ -8,12 +8,28 @@
   <title>Long-Term Storage</title>
 </head>
 <body>
+  <div class = "login-screen">
+    <div class = "login-screen__wrapper">
+      <form class="login-screen__form">
+        <div class="login-screen__input-container">
+          <input class = "login-screen__input" type="text" placeholder="Login" name="login" id="login">
+          <label for="login" class="login-screen__input-label">Логин</label>
+        </div>
+        <div class="login-screen__input-container">
+          <input class = "login-screen__input" type="password" placeholder="Password" name="password" id="password">
+          <label for="password" class="login-screen__input-label">Пароль</label>
+        </div>
+        <input class="login-screen__button" type="submit" value="Вход">
+        <input class="login-screen__button" type="button" value="Отмена">
+      </form>
+    </div>
+  </div>
   <div class="container">
     <header class="page-header">
       <ul class="header__left">
         <li class="expander__container --header-block"></li>
         <li class="header__logo --header-block">
-          <span class="header__logo-text">Long-Term Storage</span>
+          <span class="header__logo-text"></span>
         </li>
         <li class="header__search --header-block">
           <input class="header__search-input" placeholder="Search for anything..."></input>
@@ -25,8 +41,11 @@
           <div class="header__notifications-icon"><p class="header__notifications-count">2</p></div>
         </li>
         <li class="header__profile --header-block">
+          <img class="header__login-icon" src="images/login.svg">
+          <!--
           <img src="images/user.svg" alt="profile-avatar" class="header__profile-avatar">
           <span class="header__profile-name">Boyarshinov Nikita</span>
+          -->
         </li>
       </ul>
     </header>
@@ -39,12 +58,12 @@
         <div class="expander__bottom-line"></div>
       </label>
       <!--                -->
-      <div class="groups">
+      <nav class="groups">
         <div class="groups__item">
           <img src="images/plus.svg" alt="" class="groups__add">
           <span class="groups__item-name">Добавить группу</span>
         </div>
-      </div>
+      </nav>
       <div class="content">
         <div class="about">
           <div class="about__body">
@@ -81,6 +100,10 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <div class="notification">
+    <!-- <p class="notification__content">Ошибка авторизации!</p> Implemented in JS -->
+    <div class="notification__cancel">&#215;</div>
+  </div>
+  <script type="module" src="src/js/main.js"></script>
 </body>
 </html>
