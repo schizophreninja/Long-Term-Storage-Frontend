@@ -1,6 +1,6 @@
 import { onLoginAttempt, user } from "./user.js";
 import { Utils } from "./Utils.js";
-//import "./groups.js"
+import "./groups.js"
 
 const mainContainer = document.querySelector(".container");
 
