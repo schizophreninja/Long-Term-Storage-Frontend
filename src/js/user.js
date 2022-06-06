@@ -15,17 +15,20 @@ export class User {
       this.surname = response.surname || null;
       this.accessJws = response.accessJws;
       this.refreshJws = response.refreshJws;
+      console.log(user);
 
       return Utils.fetchData('GET', settings.serverAdress + settings.API.myProfileDataPath, null, {
         'Authorization': `Bearer ${this.accessJws}`
       });
     })
-    .then(response => { // get user full name
+    .then(response => { 
       this.id = response.id;
       this.name = response.firstName;
       this.surname = response.lastName;
       this.patronymic = response.fatherName;
       this.roles = response.userRoles;
+      this.group = response.group || null;
+      this.isAdmin = this.roles.find(el => el == "ADMIN") || false; // TODO: Replace
       // this.group = response.group;
     })
     .then(() => {
@@ -35,6 +38,10 @@ export class User {
     })
     .catch(() => showNotification('error', "Ошибка авторизации!"));
   }
+
+  /*isAdmin() {
+    return this.roles.find(el => el == "ADMIN") || false; 
+  }*/
 
   changeUserInfo(newInfo) {}
 

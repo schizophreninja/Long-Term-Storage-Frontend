@@ -1,6 +1,5 @@
 import { onLoginAttempt, user } from "./user.js";
 import { Utils } from "./Utils.js";
-import "./groups.js"
 
 const mainContainer = document.querySelector(".container");
 
@@ -15,6 +14,9 @@ const notification = document.querySelector(".notification");
 
 const notificationCancelButton = document.querySelector(".notification__cancel");
 let notificationTimer = null;
+
+let currentModal = null;
+
 
 notificationCancelButton.addEventListener("click", cancelNotification);
 
@@ -52,7 +54,7 @@ export function updateUserInterface() {
   
   const profileInfo = document.querySelector(".header__profile");
   const profileName = user.name + " " + user.patronymic;
-
+  
   profileInfo.innerHTML = `
     <span class="header__profile-name">${profileName}</span>
     <img src="images/user.svg" alt="profile-avatar" class="header__profile-avatar">
@@ -79,8 +81,28 @@ function cancelNotification() {
   }
 }
 
+export function showModal(innerHTML, label) { // TODO: отображение нескольких уведомлений одновременно 
+  if(currentModal) return false;
+  let element = document.createElement("div");
+  element.innerHTML = innerHTML;
+  element.classList.add("modal");
+  mainContainer.style.filter = "blur(2px)";
 
-document.addEventListener("submit", (event) => {
+  document.body.prepend(element);
+
+  currentModal = element;
+  return element;
+}
+
+export function closeModal() {
+  if(!currentModal) return false;
+  mainContainer.style.filter = "none";
+  currentModal.remove();
+  currentModal = null;
+}
+
+
+loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const login = document.querySelector(".login-screen__input[name='login']").value;
   const password = document.querySelector(".login-screen__input[name='password']").value;

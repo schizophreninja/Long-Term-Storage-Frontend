@@ -216,6 +216,10 @@ body {
 .header__login-icon {
   padding: 0 30px;
   vertical-align:middle;
+  min-height: 12px;
+  min-width: 12px;
+  height: 2vw;
+  width: 2vw;
 }
 
 .header__profile-avatar {
@@ -659,6 +663,11 @@ body {
   text-align: center
 }
 
+table {
+  margin: 5px;
+  border: 1px #878697 solid;
+}
+
 table th,
 table td {
   border: 1px #878697 solid;
@@ -686,6 +695,36 @@ tbody tr:first-of-type {
 
 .item-table__user {
   padding: 5px 10px;
+}
+
+.table__upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition: all 0.1s ease;
+
+  position: fixed;
+  bottom: 2vh;
+  right: 1.5vw;
+  width: 3.4vw;
+  height: 3.4vw;
+  border-radius: 2vw;
+  background-color: #423F5A;
+  font-size: 1.5vw;
+  border: 2px dashed gray;
+
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.6);
+}
+
+.table__upload:active {
+  transform: translate3d(4px, 2px, 0);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none
 }
 
 .notification {
@@ -795,3 +834,60 @@ tbody tr:first-of-type {
   color: #6D6AB4;
 }
 
+.modal {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+
+.modal__container {
+  font-size: 1.3vw;
+  position: relative;
+  padding: 10vh 5vw;
+  background: rgba(135, 134, 151, 0.6);
+  border-radius: 5px;
+  -webkit-box-shadow: 8px 8px 5px -5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 8px 8px 5px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 8px 8px 5px -5px rgba(0, 0, 0, 0.6);
+}
+
+.modal__label {
+  font-size: 1.5vw;
+  position: absolute;
+  top: 2vh;
+  left: 1.5vw;  
+}
+
+.modal__submit {
+  position: absolute;
+  font-size: 1vw;
+
+  bottom: 2.5vh;
+  right: 2vw;
+  padding: 0.5vw;
+}
+
+.modal__cancel-button {
+  display: inline-block;
+
+  position: absolute;
+  top: 1.5vh;
+  right: 1vw;
+  
+  font-size: 2vw;
+  padding: 0px 11px 1px;
+  border-radius: 5px;
+  background-color: #878697;
+  transition: transform 0.5s ease;
+  -webkit-box-shadow: 8px 8px 5px -5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 8px 8px 5px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 8px 8px 5px -5px rgba(0, 0, 0, 0.6);
+}
+
+.modal__cancel-button:active {
+  transform: translate3d(2px, 1px, 0);
+}
